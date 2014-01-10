@@ -10,10 +10,9 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var minifyCSS = require('gulp-minify-css');
 
-console.log(uglify());
 // tasks
 
-// Concat & Minify JS
+// { concat & minify JS }
 gulp.task('minify', function(){
   var scriptFiles = './assets/js/**/*.js';
   var scriptDist = './js';
@@ -29,10 +28,10 @@ gulp.task('minify', function(){
 // { sass }
 gulp.task('sass', function() {
   var sassFiles = './assets/sass/**/*.sass';
-  var cssDist = './css/main.css';
+  var sassDist = './css';
 
   gulp.src(sassFiles)
-      .pipe(concat('all.sass'))
+      .pipe(concat('main.sass'))
       .pipe(sass({unixNewlines: true, style: 'compressed'}))
       .pipe(gulp.dest('./css'));
 });
@@ -48,6 +47,5 @@ gulp.task('default', function() {
     gulp.run('sass');
     
     console.log('------------- END -------------');
-
   });
 });
