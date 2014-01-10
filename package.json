@@ -1,0 +1,20 @@
+{
+  "name": "gulp",
+  "version": "0.0.0",
+  "description": "Teste-gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rodolfo Dias",
+  "license": "BSD",
+  "devDependencies": {
+    "gulp-util": "~2.2.9",
+    "gulp-uglify": "~0.1.0",
+    "gulp-sass": "~0.2.3",
+    "gulp-concat": "~2.1.7",
+    "gulp-rename": "~0.2.1",
+    "gulp-minify-css": "~0.1.0",
+    "gulp-ruby-sass": "~0.1.1"
+  }
+}
