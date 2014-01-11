@@ -7,8 +7,8 @@ var pkg = require('./package.json');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-ruby-sass');
-var minifyHTML = require('gulp-minify-html');
-
+var minifyHtml = require('gulp-minify-html');
+var imagemin = require('gulp-imagemin');
 
 
 // tasks
@@ -34,12 +34,20 @@ gulp.task('build', function(){
       .pipe(gulp.dest('./css'));
 
 
+  // { image optimizer }
+  var sassFiles = './assets/img/**/*';
+  var sassDist = './img';
+  gulp.src(sassFiles)
+        .pipe(imagemin())
+        .pipe(gulp.dest(sassDist));
+
+
   // { html }
   var hmltFiles = './assets/html/**/*.html';
   var htmlDist = './';
 
   gulp.src(hmltFiles)
-    .pipe(minifyHTML())
+    .pipe(minifyHtml())
     .pipe(gulp.dest(htmlDist));
 
 });

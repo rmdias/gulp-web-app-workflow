@@ -11,6 +11,7 @@
     "gulp-sass": "~0.2.3",
     "gulp-concat": "~2.1.7",
     "gulp-ruby-sass": "~0.1.1",
-    "gulp-minify-html": "~0.1.0"
+    "gulp-minify-html": "~0.1.0",
+    "gulp-imagemin": "~0.1.4"
   }
 }

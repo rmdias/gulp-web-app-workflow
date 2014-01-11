@@ -1,0 +1,47 @@
+body
+	font-size: em(20px)
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+
+.global
+	width: 100%
+	text-align: center
+
+.logo
+	width: 197px
+	height: 388px
+	display: block
+	margin: 100px auto 30px auto
+	background: transparent url(../img/gulp-logo.png) 0 0 no-repeat
+	@include animation(Floating 3s infinite ease-in-out)
+
+.title
+	font-size: em(26px)
+	font-weight: normal
+	color: $color-marine-blue
+	padding-bottom: 15px
+
+.legend
+	font-size: em(18px)
+	font-weight: normal
+	font-weight: 300
+	color: $color-gray-light
+	padding-bottom: 20px
+
+.credits
+	font-size: em(8px)
+	color: $color-orange-light
+
+	a
+		color: #E74C3C
+		padding-bottom: 3px
+		border-bottom: 1px solid transparent
+		@include trans(all, .15s, linear)
+
+		&:hover
+			border-bottom-color: $color-orange-light 
+
+
+#fork-me
+	position: absolute
+	top: 0
+	left: 0

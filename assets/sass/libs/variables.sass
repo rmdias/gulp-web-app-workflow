@@ -1,0 +1,55 @@
+// Variables
+$color-orange-light: #E74C3C
+$color-marine-blue: #2C3E50
+$color-gray-light: #BDC3C7
+
+
+
+$base-font-size: 12px
+
+// Minix
+@mixin trans($prop, $dura, $time)
+	-webkit-transition: $prop $dura $time
+	-moz-transition: $prop $dura $time
+	-ms-transition: $prop $dura $time
+	-o-transition: $prop $dura $time
+	transition: $prop $dura $time
+
+@mixin bdrs($raduis)
+	-webkit-border-radius: $raduis
+	-moz-border-radius: $raduis
+	-ms-border-radius: $raduis
+	-o-border-radius: $raduis
+	border-radius: $raduis
+
+
+@mixin animation($animation-short)
+	-webkit-animation: $animation-short
+	-moz-animation: $animation-short
+	-o--animation: $animation-short
+	-ms-animation: $animation-short
+	animation: $animation-short
+	
+
+@mixin aparence($value)
+	-webkit-appearance: $value
+	-moz-appearance: $value
+	-o-appearance: $value
+	-ms-appearance: $value
+	appearance: $value
+
+@mixin ph($color)
+	&::-webkit-input-placeholder
+		color: $color
+	
+	&:-moz-placeholder
+		color: $color
+	
+	&.placeholder
+		color: $color
+	
+html
+	font-size: $base-font-size
+
+@function em($px, $base: $base-font-size)
+	@return ($px / $base) * 1em
