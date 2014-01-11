@@ -4,47 +4,56 @@ var gulp = require('gulp');
 var pkg = require('./package.json');
 
 //plugins
+var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-ruby-sass');
-var concat = require('gulp-concat');
-var rename = require('gulp-rename');
-var minifyCSS = require('gulp-minify-css');
+var minifyHTML = require('gulp-minify-html');
+
+
 
 // tasks
-
-// { concat & minify JS }
-gulp.task('minify', function(){
+gulp.task('build', function(){
+ 
+  // { concat & minify JS }
   var scriptFiles = './assets/js/**/*.js';
   var scriptDist = './js';
   
   gulp.src(scriptFiles)
-      .pipe(concat('all.js'))
-      .pipe(gulp.dest(scriptDist))
-      .pipe(rename('all.min.js'))
+      .pipe(concat('all.min.js'))
       .pipe(uglify())
       .pipe(gulp.dest(scriptDist));
-});
 
-// { sass }
-gulp.task('sass', function() {
-  var sassFiles = './assets/sass/**/*.sass';
+
+  // { sass }
+  var sassFiles = './assets/sass/all.sass';
   var sassDist = './css';
 
   gulp.src(sassFiles)
-      .pipe(concat('main.sass'))
+      .pipe(concat('all.min.sass'))
       .pipe(sass({unixNewlines: true, style: 'compressed'}))
       .pipe(gulp.dest('./css'));
+
+
+  // { html }
+  var hmltFiles = './assets/html/**/*.html';
+  var htmlDist = './';
+
+  gulp.src(hmltFiles)
+    .pipe(minifyHTML())
+    .pipe(gulp.dest(htmlDist));
+
 });
+
+
 
 
 // The default task (called when you run `gulp`)
 gulp.task('default', function() {
-  gulp.run('minify', 'sass');
+  gulp.run('build');
 
   // Watch files and run tasks if they change
   gulp.watch('./assets/**/*', function() {
-    gulp.run('minify');
-    gulp.run('sass');
+    gulp.run('build');
     
     console.log('------------- END -------------');
   });
