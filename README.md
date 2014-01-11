@@ -188,9 +188,19 @@ gulp.task('default', function() {
   });
 });
 </pre>
+<br>
+<br>
 
 # And now is only run the gulp and be happy
 
 		gulp
 
+<br>
+<br>
+## Contributing
 
+Check [CONTRIBUTING.md](https://github.com/rmdias/gulp-web-app-workflow/blob/master/CONTRIBUTING.md).
+
+<br>
+<br>
+<br>
