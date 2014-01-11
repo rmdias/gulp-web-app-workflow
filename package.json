@@ -1,6 +1,6 @@
 {
   "name": "Gulp-web-app-workflow",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Boilerplate from web app using Gulp.JS",
   "main": "index.html",
   "author": "Rodolfo Dias",
