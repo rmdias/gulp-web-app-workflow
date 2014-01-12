@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var gutil = require('gulp-util');
 
 // package.json
 var pkg = require('./package.json');
@@ -17,18 +18,19 @@ var map = require('map-stream');
 var myReporter = map(function (file, cb) {
 
   if (!file.jshint.success) {
-    console.log('JSHINT fail in ' + file.path);
+    gutil.log(gutil.colors.yellow.bgRed('JSHINT fail in ' + file.path));
+
     file.jshint.results.forEach(function (err) {
       if (err) {
-        console.log(' '+ file.path + ': line ' + err.line + ', col ' + err.character + ', code ' + err.code + ', ' + err.reason);
+        gutil.log(gutil.colors.red(' '+ file.path + ': line ' + err.line + ', col ' + err.character + ', code ' + err.code + ', ' + err.reason));
       }
     });
   }
 
   if (file.jshint.errorCount !== undefined) {
-    console.log('Your project have ' + file.jshint.errorCount + ' errors...');  
+    gutil.log(gutil.colors.green('Your project have ' + file.jshint.errorCount + ' errors...'));  
   } else{
-    console.log('Your project have 0 errors...');  
+    gutil.log(gutil.colors.green(' -- Your project have 0 errors...'));  
   };
   
   cb(null, file);
@@ -87,8 +89,9 @@ gulp.task('default', function() {
     var date = new Date(), hour = date.getHours(), minutes = date.getMinutes(), seconds = date.getSeconds(),
         buildTime = hour + ':' + minutes + ':' + seconds;
 
-    gulp.run('build');
+    gulp.run('build', function() {
+      gutil.log(gutil.colors.blue('------------- Built! -------------'), gutil.colors.green('( Last time -', buildTime, ')'));
+    });
 
-    console.log('------------- END -------------', buildTime);
   });
 });
