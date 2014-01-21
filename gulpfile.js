@@ -63,18 +63,18 @@ gulp.task('build', function(){
 
 
   // { image optimizer }
-  var sassFiles = './assets/img/**/*';
-  var sassDist = './img';
-  gulp.src(sassFiles)
+  var imageFiles = './assets/img/**/*';
+  var imageDist = './img';
+  gulp.src(imageFiles)
         .pipe(imagemin())
-        .pipe(gulp.dest(sassDist));
+        .pipe(gulp.dest(imageDist));
 
 
   // { html }
-  var hmltFiles = './assets/html/**/*.html';
+  var htmlFiles = './assets/html/**/*.html';
   var htmlDist = './';
 
-  gulp.src(hmltFiles)
+  gulp.src(htmlFiles)
     .pipe(minifyHtml())
     .pipe(gulp.dest(htmlDist));
 
