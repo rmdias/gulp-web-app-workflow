@@ -3,7 +3,7 @@ Gulp Web App Workflow
 
 ###### Boilerplate from web app using Gulp.JS
 
-![Class Gulp](http://rmdias.com/gulpworkflow/img/gulp-logo.png)
+![Class Gulp](http://rmdias.com/images/subdomains/gulpworkflow/gulp-logo.png)
 
 > gulp.js - The streaming build system
 
