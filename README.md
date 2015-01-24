@@ -61,7 +61,7 @@ The basic structure of the project is:
 
 ## The package.json
 
-<pre>
+```javascript
 {
   "name": "Gulp-web-app-workflow",
   "version": "0.0.1",
@@ -81,7 +81,7 @@ The basic structure of the project is:
     "map-stream": "~0.1.0"
   }
 }
-</pre>
+```
 
 
 
@@ -92,7 +92,8 @@ The basic structure of the project is:
 Any file that you put in your production folder will be compiled automatically. HTML, SASS, JS or images does not matter.
 
 
-<pre>
+```javascript
+
 var gulp = require('gulp');
 
 // package.json
@@ -187,7 +188,7 @@ gulp.task('default', function() {
     console.log('------------- END -------------', buildTime);
   });
 });
-</pre>
+```
 <br>
 <br>
 
