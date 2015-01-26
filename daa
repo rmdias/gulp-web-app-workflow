@@ -1,0 +1,25 @@
+[1mdiff --git a/README.md b/README.md[m
+[1mindex 7ed617f..bccf5a9 100644[m
+[1m--- a/README.md[m
+[1m+++ b/README.md[m
+[36m@@ -153,15 +153,15 @@[m [mgulp.task('build', function(){[m
+   gulp.src(sassFiles)[m
+       .pipe(concat('all.min.sass'))[m
+       .pipe(sass({unixNewlines: true, style: 'compressed'}))[m
+[31m-      .pipe(gulp.dest('./css'));[m
+[32m+[m[32m      .pipe(gulp.dest(sassDist));[m
+ [m
+ [m
+   // { image optimizer }[m
+[31m-  var sassFiles = './assets/img/**/*';[m
+[31m-  var sassDist = './img';[m
+[31m-  gulp.src(sassFiles)[m
+[32m+[m[32m  var imageFiles = './assets/img/**/*';[m
+[32m+[m[32m  var imageDist = './img';[m
+[32m+[m[32m  gulp.src(imageFiles)[m
+         .pipe(imagemin())[m
+[31m-        .pipe(gulp.dest(sassDist));[m
+[32m+[m[32m        .pipe(gulp.dest(imageDist));[m
+ [m
+ [m
+   // { html }[m

@@ -6,16 +6,17 @@
   "author": "Rodolfo Dias",
   "license": "BSD",
   "devDependencies": {
-    "gulp-util": "~2.2.9",
-    "gulp-uglify": "^0.2.1",
-    "gulp-sass": "^0.7.1",
+    "gulp": "^3.6.0",
     "gulp-concat": "^2.2.0",
-    "gulp-ruby-sass": "^0.4.0",
-    "gulp-minify-html": "^0.1.1",
     "gulp-imagemin": "~0.1.4",
     "gulp-jshint": "^1.5.1",
-    "map-stream": "~0.1.0",
-    "gulp": "^3.6.0",
-    "gulp-sitemap": "^0.1.3"
+    "gulp-minify-html": "^0.1.1",
+    "gulp-notify": "^2.1.0",
+    "gulp-ruby-sass": "^0.4.0",
+    "gulp-sass": "^0.7.1",
+    "gulp-sitemap": "^0.1.3",
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "~2.2.9",
+    "map-stream": "~0.1.0"
   }
 }

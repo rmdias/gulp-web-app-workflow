@@ -13,6 +13,7 @@ var sitemap = require('gulp-sitemap');
 var minifyHtml = require('gulp-minify-html');
 var imagemin = require('gulp-imagemin');
 var map = require('map-stream');
+var notify = require("gulp-notify");
 
 // jshint reporter
 var myReporter = map(function(file, cb) {
@@ -48,7 +49,11 @@ gulp.task('build', function() {
         .pipe(myReporter)
         .pipe(concat('all.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest(scriptDist));
+        .pipe(gulp.dest(scriptDist))
+        .pipe(notify({
+            "title": "Javascript Build",
+            "message": "Build with success! file <%= file.relative %>",
+        }));
 
     // { sass }
     var sassFiles = './assets/sass/all.sass';
@@ -60,7 +65,11 @@ gulp.task('build', function() {
             unixNewlines: true,
             style: 'compressed'
         }))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./css'))
+        .pipe(notify({
+            "title": "Sass Build",
+            "message": "Build with success! file <%= file.relative %>",
+        }));       
 
     // { image optimizer }
     var imageFiles = './assets/img/**/*';
