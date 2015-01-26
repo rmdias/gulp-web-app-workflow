@@ -153,15 +153,15 @@ gulp.task('build', function(){
   gulp.src(sassFiles)
       .pipe(concat('all.min.sass'))
       .pipe(sass({unixNewlines: true, style: 'compressed'}))
-      .pipe(gulp.dest('./css'));
+      .pipe(gulp.dest(sassDist));
 
 
   // { image optimizer }
-  var sassFiles = './assets/img/**/*';
-  var sassDist = './img';
-  gulp.src(sassFiles)
+  var imageFiles = './assets/img/**/*';
+  var imageDist = './img';
+  gulp.src(imageFiles)
         .pipe(imagemin())
-        .pipe(gulp.dest(sassDist));
+        .pipe(gulp.dest(imageDist));
 
 
   // { html }
