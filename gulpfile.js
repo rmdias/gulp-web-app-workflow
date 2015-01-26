@@ -65,7 +65,7 @@ gulp.task('build', function() {
             unixNewlines: true,
             style: 'compressed'
         }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest(sassDist))
         .pipe(notify({
             "title": "Sass Build",
             "message": "Build with success! file <%= file.relative %>",
